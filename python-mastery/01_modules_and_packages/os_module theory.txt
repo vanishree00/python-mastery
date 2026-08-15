@@ -1,0 +1,93 @@
+First: What is an OS?
+
+OS = Operating System.
+
+An operating system is the main software that allows us to interact with and 
+control our computer.
+Examples:
+-Windows
+-macOS
+-Linux
+-Android
+-iOS
+
+For example, when we:
+create a folder
+delete a file
+rename a file
+check where a file is located
+open a program
+the operating system handles these operations.
+
+Python provides a built-in module called os.
+It allows Python to communicate with the operating system and 
+perform certain operations.
+
+for example:
+import os
+Here:
+import → tells Python that we want to use something
+os → the module that provides operating-system-related functionality
+
+examples:
+(1)os.getcwd()--> cwd means:Current Working Directory
+Let's break it down.
+Directory:Another word for folder.
+So:
+Directory = Folder
+current=The place where you are currently working.
+Therefore:
+Current Working Directory = The folder where Python is currently working.
+
+(2)os.listdir()-->Directory list{list the contents of the current folder.}
+Now suppose our current folder contains:
+Python-Mastery
+│
+├── imports.py
+├── practice.py
+├── notes.txt
+└── projects
+we can ask Python:
+"Show me everything inside this folder."
+it may show like this: ['imports.py', 'practice.py', 'notes.txt', 'projects']
+listdir--> list(show a list) + dir(Directory/folder)
+
+(3)os.mkdir()--> Make Directory
+Now let's say we want Python to create a folder.
+Normally we might do: Right click → New Folder
+Python can do it too.
+
+(4)os.rename()
+Suppose we have: old.txt and we want new.txt
+Python can rename it:
+os.rename("old.txt", "new.txt")
+old.txt
+   ↓
+new.txt
+
+(5)os.remove()
+Suppose you have: old.txt and we want to delete it.
+os.remove("old.txt")  -->This deletes the file.
+
+⚠️ we have to be careful with remove() while practicing
+ because it actually deletes the file.
+
+ (6)os.rmdir()
+rmdir means: Remove Directory
+It removes an empty folder.
+
+
+--SHORT WAY--
+import os:allows Python to interact with the operating system for things like-
+Find where I am       → os.getcwd()
+Show what's here      → os.listdir()
+Create a folder       → os.mkdir()
+Rename something      → os.rename()
+Delete a file         → os.remove()
+Delete empty folder   → os.rmdir()
+
+
+
+
+
+
