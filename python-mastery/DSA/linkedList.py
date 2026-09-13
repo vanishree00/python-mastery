@@ -15,7 +15,10 @@ newNode2=Node(20)
 newNode3=Node(30)
 newNode1.next = newNode2
 newNode2.next = newNode3
-head = newNode1
+head= newNode1
+newNode4= Node(40)
+newNode4.next = head
+head = newNode4
 print(head.data)
 print(head.next.data)
 print(head.next.next.data)
