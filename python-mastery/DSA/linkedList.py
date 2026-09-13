@@ -2,6 +2,13 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+
+    def printLinkedList(self):  #self act as starting node 
+     current = self
+     while current!= None:
+      print(current.data, end= "-->") 
+      current = current.next
+     print("None")        
         
 newNode1=Node(10)
 newNode2=Node(20)
@@ -12,12 +19,7 @@ head = newNode1
 print(head.data)
 print(head.next.data)
 print(head.next.next.data)
-def printLinkedList(head):
- current = head
- while current!= None:
-    print(current.data, end= "-->") 
-    current = current.next
- print("None")    
-printLinkedList(head)   
+
+head.printLinkedList()   #calling the method directly on head node
 
 
