@@ -16,9 +16,14 @@ newNode3=Node(30)
 newNode1.next = newNode2
 newNode2.next = newNode3
 head= newNode1
-newNode4= Node(40)
+newNode4= Node(40)   #inserting at begninng
 newNode4.next = head
 head = newNode4
+newNode5 = Node(50)   #inserting at end
+current = head 
+while current.next != None:
+   current = current.next
+current.next= newNode5    
 print(head.data)
 print(head.next.data)
 print(head.next.next.data)
