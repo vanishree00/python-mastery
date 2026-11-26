@@ -55,6 +55,30 @@ input_string=input("enter a string: ")
 result=is_balanced(input_string)
 print("The balancing condition is :", result)       
 
+#basic operations using Doubly linked list
+class Node:
+   def __init__(self,data):
+      self.data=data
+      self.next=None
+      self.prev=None
+class DLL:
+   def __init__(self):
+      self.head=None
+   def insert_values(self, values):
+      for value in values:
+         newNode=Node(value)
+         if self.head is None:
+            newNode=self.head
+            newNode.next=newNode
+            newNode.prev=newNode
+         else:
+            tail=self.head.prev
+            newNode.next=self.head
+            newNode.prev=tail
+            tail.next=newNode
+            self.head.prev=newNode
+
+
 
 
     
