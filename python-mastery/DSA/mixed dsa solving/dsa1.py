@@ -38,7 +38,22 @@ result=reverse_name(name)
 print("original name:", name)
 print("Reversed name: ", result)
   
-  
+  #paranthesis balance checking
+def is_balanced(input_string):
+    stack=[]
+    pairs={')':'(', ']':'[', '}':'{'}
+    for char in input_string:
+        if char in '([{':
+            stack.append(char)
+        elif char in ')]}':
+            if not stack or stack[-1]!=pairs[char]:
+                return False 
+            stack.pop()
+    return not stack
+
+input_string=input("enter a string: ")
+result=is_balanced(input_string)
+print("The balancing condition is :", result)       
 
 
 
