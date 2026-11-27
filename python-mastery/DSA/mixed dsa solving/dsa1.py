@@ -77,6 +77,46 @@ class DLL:
             newNode.prev=tail
             tail.next=newNode
             self.head.prev=newNode
+   def insert_after_value(self,data_after, data_to_insert):     
+      if self.head is None:
+         print("List is empty")
+         return
+      current=self.head
+      while True:
+         if current.data==data_after:
+            newNode=Node(data_to_insert)
+            newNode.next=current.next
+            newNode.prev=current
+            current.next.prev=newNode
+            current.next=newNode
+            print(data_to_insert, "is inserted after ", data_after)
+         current=current.next
+         if current==self.head:  
+            break
+      print("Value not found in the list")
+   def remove_by_value(self, data):
+      if self.head is None:
+         print("List is empty. Cannot remove data.")
+         return
+      current=self.head
+      while True:
+         if current.data==data:
+            if current.next==current:
+               self.head=None
+            elif current==self.head:     
+               self.head=current.next
+               current.prev.next=current.next
+               current.next.prev=current.prev
+            else:     
+               current.prev.next=current.next
+               current.next.prev=current.prev
+            print(data, "is removed from the list.")
+            return
+         current=current.next
+         if current==self.head:
+            break
+      print(data, "is not found in the list to remove.")   
+                  
 
 
 
