@@ -115,8 +115,34 @@ class DLL:
          current=current.next
          if current==self.head:
             break
-      print(data, "is not found in the list to remove.")   
-                  
+      print(data, "is not found in the list to remove.")  
+   def print_forward(self):
+      if self.head is None:
+         print("List is empty.")
+         return
+      current=self.head
+      print("---FORWARD TRAVERSAL---")
+      while True:
+         print(current.data, end=" ")
+         current=current.next
+         if current==self.head:
+            break
+   def print_backward(self):
+      if self.head is None:
+         print("List ise empty.")
+         return
+      current=self.head.prev
+      print("---BACKWARD TRAVERSAL---")
+      while True:
+         print(current.data, end =" ")
+         current=current.prev
+         if current==self.head.prev:
+            break
+         
+            
+
+
+
 
 
 
