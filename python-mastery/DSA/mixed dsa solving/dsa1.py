@@ -1,59 +1,59 @@
-#find missing number
-nums=[2,1,4,0,5,6]
-n=len(nums)
-expectedSum=n*(n+1)//2
-actualSum=0
-for i in nums:
-    actualSum+=i
-print("the missing number is:", expectedSum-actualSum)    
+# #find missing number
+# nums=[2,1,4,0,5,6]
+# n=len(nums)
+# expectedSum=n*(n+1)//2
+# actualSum=0
+# for i in nums:
+#     actualSum+=i
+# print("the missing number is:", expectedSum-actualSum)    
 
-#reversing string using stack
-class Stack:
-  def __init__(self):
-    self.stack=[]
+# #reversing string using stack
+# class Stack:
+#   def __init__(self):
+#     self.stack=[]
 
-  def push(self,item):
-    self.stack.append(item)
+#   def push(self,item):
+#     self.stack.append(item)
 
-  def pop(self):
-    if not self.is_empty():
-      return self.stack.pop()
-    return None
+#   def pop(self):
+#     if not self.is_empty():
+#       return self.stack.pop()
+#     return None
 
-  def is_empty(self):
-    return len(self.stack)==0
+#   def is_empty(self):
+#     return len(self.stack)==0
 
-def reverse_name(name):
-  stack=Stack()
-  for char in name:
-     stack.push(char)
+# def reverse_name(name):
+#   stack=Stack()
+#   for char in name:
+#      stack.push(char)
 
-  reversed_name=""
-  while not stack.is_empty():
-    reversed_name+=stack.pop()
-  return reversed_name
+#   reversed_name=""
+#   while not stack.is_empty():
+#     reversed_name+=stack.pop()
+#   return reversed_name
 
-name=input("Enter your name: ")
-result=reverse_name(name)
-print("original name:", name)
-print("Reversed name: ", result)
+# name=input("Enter your name: ")
+# result=reverse_name(name)
+# print("original name:", name)
+# print("Reversed name: ", result)
   
-  #paranthesis balance checking
-def is_balanced(input_string):
-    stack=[]
-    pairs={')':'(', ']':'[', '}':'{'}
-    for char in input_string:
-        if char in '([{':
-            stack.append(char)
-        elif char in ')]}':
-            if not stack or stack[-1]!=pairs[char]:
-                return False 
-            stack.pop()
-    return not stack
+#   #paranthesis balance checking
+# def is_balanced(input_string):
+#     stack=[]
+#     pairs={')':'(', ']':'[', '}':'{'}
+#     for char in input_string:
+#         if char in '([{':
+#             stack.append(char)
+#         elif char in ')]}':
+#             if not stack or stack[-1]!=pairs[char]:
+#                 return False 
+#             stack.pop()
+#     return not stack
 
-input_string=input("enter a string: ")
-result=is_balanced(input_string)
-print("The balancing condition is :", result)       
+# input_string=input("enter a string: ")
+# result=is_balanced(input_string)
+# print("The balancing condition is :", result)       
 
 #basic operations using Doubly linked list
 class Node:
@@ -68,7 +68,7 @@ class DLL:
       for value in values:
          newNode=Node(value)
          if self.head is None:
-            newNode=self.head
+            self.head=newNode
             newNode.next=newNode
             newNode.prev=newNode
          else:
@@ -100,6 +100,7 @@ class DLL:
             current.next.prev=newNode
             current.next=newNode
             print(data_to_insert, "is inserted after ", data_after)
+            return
          current=current.next
          if current==self.head:  
             break
@@ -131,7 +132,7 @@ class DLL:
          print("List is empty.")
          return
       current=self.head
-      print("---FORWARD TRAVERSAL---")
+      print("\n---FORWARD TRAVERSAL---")
       while True:
          print(current.data, end=" ")
          current=current.next
@@ -142,7 +143,7 @@ class DLL:
          print("List ise empty.")
          return
       current=self.head.prev
-      print("---BACKWARD TRAVERSAL---")
+      print("\n---BACKWARD TRAVERSAL---")
       while True:
          print(current.data, end =" ")
          current=current.prev
@@ -150,6 +151,20 @@ class DLL:
             break
 dll=DLL()
 dll.insert_values(["v", "a", "n", "i"])
+print("\nInitial list: ")
+dll.display()
+print("\nAfter inserting s after i : ")
+dll.insert_after_value("i", "s")
+dll.display()
+print("\nAfter removing s: ")
+dll.remove_by_value("s")
+dll.display()
+print("\nAfter trying to remove h: ")
+dll.remove_by_value("h")
+dll.display()
+dll.print_forward()
+dll.print_backward()
+
 
             
 
