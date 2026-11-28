@@ -77,6 +77,16 @@ class DLL:
             newNode.prev=tail
             tail.next=newNode
             self.head.prev=newNode
+   def display(self):
+      if self.head is None:
+         print("list is empty")
+         return
+      current=self.head
+      while True:
+         print(current.data, end=" ")
+         current=current.next
+         if current==self.head:  
+            break     
    def insert_after_value(self,data_after, data_to_insert):     
       if self.head is None:
          print("List is empty")
@@ -138,7 +148,9 @@ class DLL:
          current=current.prev
          if current==self.head.prev:
             break
-         
+dll=DLL()
+dll.insert_values(["v", "a", "n", "i"])
+
             
 
 
